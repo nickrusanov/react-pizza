@@ -1,0 +1,15 @@
+@import "./../../sass/common/mixins";
+
+.error {
+	margin: 120px auto 0;
+
+	text-align: center;
+}
+
+.title {
+	@include title-1;
+}
+
+.text {
+	margin-top: var(--space-sm);
+}

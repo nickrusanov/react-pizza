@@ -1,0 +1,55 @@
+html {
+	font-size: 16px;
+
+	scrollbar-color: var(--color-brand) transparent;
+	scrollbar-width: thin;
+}
+
+body {
+	font: 1rem/1.2 "ProximaNova", Arial, sans-serif;
+	color: var(--color-secondary);
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 100vh;
+	min-width: 320px;
+}
+
+main {
+	flex-grow: 1;
+}
+
+.container {
+	max-width: 1255px;
+	padding: 0 15px;
+	margin: 0 auto;
+
+	&--w860 {
+		max-width: 860px;
+	}
+}
+
+@include effect {
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 3px;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: transparent;
+		border-left: 1px solid var(--color-secondary-op-20);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: var(--color-secondary-op-90);
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background-color: var(--color-secondary);
+	}
+}

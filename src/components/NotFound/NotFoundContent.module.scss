@@ -1,0 +1,13 @@
+@import "./../../sass/common/mixins";
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-sm);
+}
+
+.title {
+	@include title-1;
+}

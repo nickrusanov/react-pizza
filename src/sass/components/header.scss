@@ -1,0 +1,120 @@
+.header {
+	position: sticky;
+	top: 0px;
+	z-index: $layer-4;
+
+	background-color: var(--color-primary);
+
+	&__inner {
+		@include line;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-sm);
+
+		padding: 20px 0;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+	}
+
+	&__logo-img {
+		min-width: 38px;
+	}
+
+	&__logo-title {
+		font-size: var(--font-size-xl);
+		font-weight: 800;
+		letter-spacing: 0.01em;
+		color: var(--color-secondary);
+	}
+
+	&__logo-text {
+		color: var(--color-grey-ln-50);
+	}
+
+	&__cart {
+		display: flex;
+		align-items: center;
+
+		padding: 15px 20px;
+
+		position: relative;
+
+		white-space: nowrap;
+
+		background-color: var(--color-brand);
+		border-radius: 25px;
+	}
+
+	&__cart-text {
+		font-weight: 700;
+		color: var(--color-primary);
+		line-height: 1;
+
+		&--price {
+			padding-right: 12px;
+
+			position: relative;
+
+			&::after {
+				content: "";
+				height: 100%;
+				width: 1px;
+
+				position: absolute;
+				right: 0;
+				top: 0;
+
+				background-color: var(--color-primary);
+
+				opacity: 25%;
+			}
+		}
+	}
+
+	&__cart-img {
+		min-width: 18px;
+		height: 18px;
+		object-fit: contain;
+
+		margin-left: 12px;
+		margin-right: 8px;
+	}
+}
+
+/*********************** MEDIA ***********************/
+
+@media (hover: hover) and (pointer: fine) {
+	.header__cart {
+		@include trans;
+	}
+
+	.header__cart:hover {
+		background-color: var(--color-brand-dark);
+	}
+
+	.header__cart:active {
+		top: 2px;
+	}
+}
+
+@include media(540px) {
+	.header__logo-text {
+		display: none;
+	}
+}
+
+@include media(400px) {
+	.header__logo-box {
+		max-width: 80px;
+	}
+
+	.header__cart {
+		padding: 15px;
+	}
+}

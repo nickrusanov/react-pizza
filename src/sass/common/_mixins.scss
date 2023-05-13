@@ -1,0 +1,99 @@
+// MEDIA
+
+@mixin sm {
+	@media (max-width: $screen-sm) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (max-width: $screen-md) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (max-width: $screen-lg) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (max-width: $screen-xl) {
+		@content;
+	}
+}
+
+@mixin media($screen) {
+	@media (max-width: $screen) {
+		@content;
+	}
+}
+
+@mixin effect {
+	@media (hover: hover) and (pointer: fine) {
+		@content;
+	}
+}
+
+// EFFECTS
+
+@mixin trans($trans-dur: 0.3s) {
+	transition: all $trans-dur ease;
+}
+
+// ELEMENTS
+
+@mixin title-1 {
+	font-size: var(--font-size-xxl);
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	color: var(--color-grey-ln-0);
+}
+
+@mixin title-2 {
+	font-size: var(--font-size-md);
+	font-weight: 800;
+	letter-spacing: 0.01em;
+	color: var(--color-grey-ln-0);
+}
+
+@mixin title-3 {
+	font-size: var(--font-size-md);
+	font-weight: 700;
+	color: var(--color-primary);
+}
+
+@mixin line {
+	position: relative;
+
+	&::after {
+		content: "";
+		width: 100%;
+		height: 1px;
+
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		background-color: var(--color-grey-ln-95);
+	}
+}
+
+@mixin arrow-right {
+	padding-right: 18px;
+
+	position: relative;
+
+	&::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+
+		position: absolute;
+		right: 0;
+		top: 11px;
+
+		border: 4px solid transparent;
+	}
+}
